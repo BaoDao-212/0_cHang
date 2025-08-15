@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chào tạm biệt chị Hằng — Mẹ tròn con vuông ✨</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --bg-1:#0e1026; --bg-2:#1b2a4a; --bg-3:#2b4f7b; --glass:rgba(255,255,255,.08);
+            --aqua:#8ef0ff; --pink:#ff74c6; --gold:#ffd166; --lime:#d1ff6a; --violet:#c2b3ff;
+        }
+        *,*::before,*::after{ box-sizing:border-box; }
+        html,body{ height:100%; }
+        body{
+            margin:0; color:#fff; overflow:hidden;
+            background:
+                    radial-gradient(1200px 800px at 10% 20%, rgba(142,240,255,.14), transparent 60%),
+                    radial-gradient(1000px 700px at 90% 80%, rgba(255,116,198,.10), transparent 60%),
+                    linear-gradient(135deg, var(--bg-1), var(--bg-2) 40%, var(--bg-3));
+            font-family: Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        }
+
+        /* Aurora ribbon */
+        .aurora{ position:fixed; inset:-25vmax; pointer-events:none; z-index:0;
+            background: conic-gradient(from 0deg,
+            rgba(255,116,198,.16), rgba(142,240,255,.14), rgba(209,255,106,.12), rgba(255,209,102,.14), rgba(255,116,198,.16));
+            filter: blur(70px) saturate(120%); mix-blend-mode:screen; opacity:.85; animation: spin 36s linear infinite;
+        }
+        @keyframes spin{ to{ transform: rotate(1turn); } }
+
+        /* Parallax starfield */
+        .stars,.stars::before,.stars::after{ position:fixed; inset:0; z-index:0; content:""; pointer-events:none; background-repeat:repeat; background-size:260px 260px; filter:drop-shadow(0 0 6px rgba(255,255,255,.35)); }
+        .stars{ background-image:radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,.9) 50%, transparent 52%), radial-gradient(1px 1px at 120px 80px, rgba(255,255,255,.7) 50%, transparent 52%), radial-gradient(1.5px 1.5px at 200px 140px, rgba(255,255,255,.6) 50%, transparent 52%); animation: drift 140s linear infinite; }
+        .stars::before{ background-image:radial-gradient(2px 2px at 40px 110px, rgba(255,255,255,.85) 50%, transparent 52%), radial-gradient(1px 1px at 160px 40px, rgba(255,255,255,.7) 50%, transparent 52%); animation: drift 200s linear infinite; opacity:.6; }
+        .stars::after{ background-image:radial-gradient(1.5px 1.5px at 60px 60px, rgba(255,255,255,.75) 50%, transparent 52%), radial-gradient(1px 1px at 180px 180px, rgba(255,255,255,.6) 50%, transparent 52%); animation: drift 260s linear infinite; opacity:.45; }
+        @keyframes drift{ to{ transform: translate3d(-260px,-260px,0); } }
+
+        /* Layout */
+        .wrap{ position:relative; z-index:2; height:100%; display:grid; place-items:center; padding: clamp(24px, 6vmin, 48px); }
+        .card{
+            width:min(1000px, 94vw);
+            background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+            border:1px solid rgba(255,255,255,.22);
+            border-radius: 28px; overflow:hidden; position:relative;
+            box-shadow: 0 24px 90px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.12);
+            backdrop-filter: blur(14px) saturate(140%);
+        }
+        .ring{ position:absolute; inset:-2px; border-radius:30px; padding:2px; background: linear-gradient(135deg, var(--aqua), var(--pink), var(--gold), var(--lime));
+            -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            -webkit-mask-composite: xor; mask-composite: exclude; animation:hue 14s linear infinite; }
+        @keyframes hue{ to{ filter:hue-rotate(360deg); } }
+
+        .content{ position:relative; z-index:2; padding: clamp(26px, 6vmin, 56px); text-align:center; }
+
+        .eyebrow{ display:inline-flex; align-items:center; gap:10px; padding:6px 12px; border-radius:999px; background: linear-gradient(90deg, rgba(142,240,255,.22), rgba(255,116,198,.22)); border:1px solid rgba(255,255,255,.26); backdrop-filter: blur(8px); letter-spacing:.14em; text-transform:uppercase; font-size: clamp(11px, 2vmin, 13px); color:#e6fbff; }
+        .sparkle{ width:12px; height:12px; border-radius:2px; background:currentColor; transform:rotate(45deg); box-shadow:0 0 10px currentColor; }
+
+        .title{ font-family:"Pacifico", cursive; font-weight:400; line-height:1.05; font-size: clamp(40px, 7vmin, 86px); margin: 18px auto 10px; background:linear-gradient(90deg, #fff, #eaffff, #ffe1f3); -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow:0 12px 46px rgba(0,0,0,.35); animation: float 5.2s ease-in-out infinite; }
+        @keyframes float{ 0%,100%{ transform:translateY(0)} 50%{ transform:translateY(-8px)} }
+
+        .subtitle{ max-width: 62ch; margin: 0 auto 20px; font-weight:600; font-size: clamp(16px, 2.6vmin, 22px); color:#e9f8ff; opacity:.95; }
+
+        .quote{ max-width: 70ch; margin: 18px auto 26px; font-weight:300; font-size: clamp(15px, 2.2vmin, 19px); color:#eaf6ff; opacity:.9; line-height:1.7; }
+
+        .badges{ display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin:26px 0 8px; }
+        .badge{ padding:10px 14px; border-radius:14px; font-weight:600; font-size:14px; letter-spacing:.02em; background:var(--glass); border:1px solid rgba(255,255,255,.18); backdrop-filter: blur(10px); box-shadow: inset 0 1px 0 rgba(255,255,255,.12); }
+
+        .cta{ display:flex; justify-content:center; gap:14px; margin-top: 24px; flex-wrap:wrap; }
+        .btn{ appearance:none; border:0; cursor:pointer; padding:14px 22px; border-radius:18px; font-weight:800; letter-spacing:.02em; font-size: clamp(14px, 2.4vmin, 18px); color:#0b1020; background: linear-gradient(90deg, var(--aqua), var(--gold)); filter: drop-shadow(0 10px 30px rgba(142,240,255,.45)); transition: transform .15s ease, filter .3s ease; }
+        .btn:hover{ transform: translateY(-2px) scale(1.02); filter: drop-shadow(0 18px 40px rgba(255,209,102,.55)); }
+        .btn:active{ transform: translateY(0) scale(.98); }
+
+        /* Balloons */
+        .balloons{ position:absolute; inset:0; pointer-events:none; z-index:1; overflow:hidden; }
+        .balloons span{ position:absolute; bottom:-20vh; width:18px; height:24px; border-radius: 50% 50% 50% 50% / 58% 58% 42% 42%; background: currentColor; color: var(--aqua); box-shadow: 0 0 18px currentColor, inset 0 -6px 12px rgba(0,0,0,.25); animation: rise var(--t) linear infinite; filter:saturate(130%); }
+        .balloons span::after{ content:""; position:absolute; left:50%; top:90%; width:2px; height:24px; background: rgba(255,255,255,.55); transform: translateX(-50%); opacity:.7; }
+        @keyframes rise{ to{ transform: translateY(-140vh) translateX(var(--x)); } }
+
+        /* Confetti */
+        .confetti{ position:absolute; inset:0; pointer-events:none; z-index:3; overflow:hidden; }
+        .confetti i{ position:absolute; top:-10vh; width:10px; height:16px; border-radius:2px; opacity:.9; transform: translateY(0) rotate(0); animation: fall var(--d) linear infinite, spinY var(--r) linear infinite; }
+        .confetti i.c1{ background: linear-gradient(180deg, #ff9ad9, #ffd1f0); }
+        .confetti i.c2{ background: linear-gradient(180deg, #8ef0ff, #dffbff); }
+        .confetti i.c3{ background: linear-gradient(180deg, #ffd166, #fff0c2); }
+        .confetti i.c4{ background: linear-gradient(180deg, #d1ff6a, #efffc7); }
+        .confetti i.c5{ background: linear-gradient(180deg, #c2b3ff, #efe9ff); }
+        @keyframes fall{ to{ transform: translateY(120vh) rotate(360deg); } }
+        @keyframes spinY{ to{ transform: rotateY(1turn); } }
+
+        .note{ margin-top:28px; font-size:14px; opacity:.8; }
+        @media (max-width:560px){ .badge{ font-size:12px; padding:8px 12px; } }
+    </style>
+</head>
+<body>
+<div class="stars"></div>
+<div class="aurora" aria-hidden="true"></div>
+
+<div class="wrap">
+    <div class="card" role="region" aria-label="Thiệp chúc mừng mẹ tròn con vuông">
+        <div class="ring" aria-hidden="true"></div>
+
+        <!-- Decorative layers -->
+        <div class="balloons" aria-hidden="true">
+            <span style="left:6%;  --t:18s; --x:-20px; color:#ff9ad9"></span>
+            <span style="left:14%; --t:22s; --x: 18px; color:#8ef0ff"></span>
+            <span style="left:22%; --t:20s; --x:-14px; color:#d1ff6a"></span>
+            <span style="left:32%; --t:26s; --x: 22px; color:#ffd166"></span>
+            <span style="left:40%; --t:19s; --x:-10px; color:#c2b3ff"></span>
+            <span style="left:48%; --t:23s; --x: 26px; color:#ff9ad9"></span>
+            <span style="left:58%; --t:21s; --x:-18px; color:#8ef0ff"></span>
+            <span style="left:66%; --t:25s; --x: 14px; color:#ffd166"></span>
+            <span style="left:72%; --t:17s; --x:-26px; color:#d1ff6a"></span>
+            <span style="left:80%; --t:24s; --x: 12px; color:#c2b3ff"></span>
+            <span style="left:88%; --t:20s; --x:-16px; color:#8ef0ff"></span>
+            <span style="left:94%; --t:22s; --x: 10px; color:#ff9ad9"></span>
+        </div>
+
+        <div class="confetti" aria-hidden="true">
+            <!-- 28 ribbons -->
+            <i class="c1" style="left:3%;  --d:6.4s; --r:1.8s"></i>
+            <i class="c2" style="left:7%;  --d:7.2s; --r:2.0s"></i>
+            <i class="c3" style="left:11%; --d:6.8s; --r:1.6s"></i>
+            <i class="c4" style="left:16%; --d:7.6s; --r:2.2s"></i>
+            <i class="c5" style="left:20%; --d:6.2s; --r:1.7s"></i>
+            <i class="c2" style="left:25%; --d:7.8s; --r:2.4s"></i>
+            <i class="c1" style="left:30%; --d:6.6s; --r:1.9s"></i>
+            <i class="c3" style="left:35%; --d:7.1s; --r:2.1s"></i>
+            <i class="c4" style="left:40%; --d:6.5s; --r:1.5s"></i>
+            <i class="c5" style="left:45%; --d:7.4s; --r:2.0s"></i>
+            <i class="c2" style="left:50%; --d:6.1s; --r:1.6s"></i>
+            <i class="c3" style="left:55%; --d:7.9s; --r:2.3s"></i>
+            <i class="c1" style="left:60%; --d:6.7s; --r:1.8s"></i>
+            <i class="c4" style="left:64%; --d:7.3s; --r:2.2s"></i>
+            <i class="c5" style="left:68%; --d:6.9s; --r:1.7s"></i>
+            <i class="c3" style="left:72%; --d:7.2s; --r:2.0s"></i>
+            <i class="c2" style="left:76%; --d:6.3s; --r:1.5s"></i>
+            <i class="c1" style="left:80%; --d:7.6s; --r:2.1s"></i>
+            <i class="c5" style="left:83%; --d:6.4s; --r:1.9s"></i>
+            <i class="c4" style="left:86%; --d:7.7s; --r:2.4s"></i>
+            <i class="c3" style="left:89%; --d:6.8s; --r:1.6s"></i>
+            <i class="c2" style="left:91%; --d:7.5s; --r:2.0s"></i>
+            <i class="c5" style="left:93%; --d:6.2s; --r:1.8s"></i>
+            <i class="c1" style="left:95%; --d:7.1s; --r:2.1s"></i>
+            <i class="c2" style="left:24%; --d:6.0s; --r:2.7s"></i>
+            <i class="c3" style="left:52%; --d:6.0s; --r:2.9s"></i>
+            <i class="c4" style="left:74%; --d:6.0s; --r:2.6s"></i>
+        </div>
+
+        <div class="content">
+            <div class="eyebrow"><span class="sparkle"></span> From our team with love</div>
+            <h1 class="title">Chào tạm biệt chị Hằng ✨</h1>
+
+            <p class="subtitle">
+                Từ hôm nay, chị tạm rời trận tuyến để chuẩn bị đón chào thiên thần nhỏ. Cả team gửi đến chị muôn vàn yêu thương và lời chúc tốt đẹp nhất.
+            </p>
+
+            <p class="quote">
+                “Mỗi nhịp đạp là một phép màu. Mỗi ngày chờ đợi là một bông hoa nở trong lòng. Chúc hành trình làm mẹ của chị dịu êm như gió, rực rỡ như nắng, và tròn đầy hạnh phúc.”
+            </p>
+
+            <div class="badges">
+                <span class="badge">#MeTronConVuong</span>
+                <span class="badge">#ConKhoemanhMeAnTam</span>
+                <span class="badge">#YeuThuongDayNha</span>
+                <span class="badge">#HengayTaiXuat</span>
+            </div>
+
+            <div class="cta" aria-label="Khu vực lời chúc">
+                <button class="btn" aria-label="Chúc mẹ tròn con vuông, hạnh phúc viên mãn">
+                    Chúc chị Hằng mẹ tròn con vuông — con khỏe, mẹ bình an 💖
+                </button>
+                <button class="btn" aria-label="Gửi thêm yêu thương">
+                    Ngàn yêu thương gửi tới hai mẹ con 🌸
+                </button>
+            </div>
+
+            <div class="note">Giữ gìn sức khỏe, ăn ngon ngủ yên, bình an qua từng ngày chị nhé! 🫶</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
